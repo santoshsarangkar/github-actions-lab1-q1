@@ -5,17 +5,31 @@ on:
 
 
 jobs:
+
   job1:
+    runs-on: ubunti-latest
     name: job1
+    steps: 
+        - name: 
+          run: echo "job1"
   job2:
+    runs-on: ubunti-latest
     needs: job1
     name: job2
     steps: 
       - name: exit 
         run: exit 1 
   job3:
+    runs-on: ubunti-latest
     name: job3
     needs: [job1, job2]
-
+    steps: 
+      - name: 
+        run: echo "job3" 
   job4: 
+    runs-on: ubunti-latest
+
     name: job4
+    steps: 
+      - name: 
+        run: echo "job4"
